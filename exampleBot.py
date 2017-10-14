@@ -34,11 +34,17 @@ def help(bot, update):
     update.message.reply_text('Help!')
 
 
-def summator(bot, update):
+def echo(bot, update):
+    cmd = update.message.text.split(" ")[0]
+    thing = ''.join(update.message.text.split(" "))
     if update.message.text == 'test':
         update.message.reply_text('No')
+    elif cmd == "add":
+        update.message.reply_text(thing)
     else:
-        update.message.reply_text(update.message.text)
+        update.message.reply_text("Sorry, I don't get you")
+
+
 
 
 def error(bot, update, error):
@@ -46,7 +52,6 @@ def error(bot, update, error):
 
 def test(bot, update):
     update.message.reply_text('Test is working!')
-
 
 
 def main():
